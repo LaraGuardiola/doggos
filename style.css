@@ -32,7 +32,7 @@
 }
 
 .barney {
-    background-color: bisque;
+    background-color: rgb(243, 243, 88);
 }
 
 .moe {
@@ -103,6 +103,11 @@ img {
     transform: translateY(-322px);
 }
 
+.photo.right {
+    transition: transform 1s ease-out, opacity 1s ease-out;
+    transform: translateX(390px);
+}
+
 .active {
     opacity: 1;
 }
@@ -113,6 +118,10 @@ img {
 
 .top.active {
     transform: translateY(0px);
+}
+
+.right.active {
+    transform: translateX(0px);
 }
 
 .loader {
@@ -135,7 +144,16 @@ footer {
     background: black;
     color: white;
     height: 60px;
+    width: 100%;
     font-family: monospace;
+    position: absolute;
+}
+
+.pareja {
+    position: absolute;
+    right:3em;
+    bottom: -4em;
+    transform: scale(0.5);
 }
 
 .heart {
@@ -203,5 +221,9 @@ footer {
         justify-content: center;
         align-items: center;
         text-wrap: nowrap;
+    }
+
+    .pareja {
+        right: 10em;
     }
 }
