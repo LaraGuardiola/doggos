@@ -6,12 +6,26 @@
     scroll-behavior: smooth;
 }
 
+/* hack guapo para quitar las scrollbars sin perder funcionalidad */
+*::-webkit-scrollbar{
+    display: none;
+}
+
 @font-face {
     font-family: "Charcoal";
     src: url(Charcoal.otf);
 }
 
+.scroller {
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+    max-height: 100vh;
+    overflow-y: scroll;
+}
+
 .doggos {
+    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     width:100%;
@@ -91,6 +105,7 @@ img {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+    z-index: 9;
 }
 
 .info > h1 {
@@ -183,7 +198,7 @@ footer {
     height: 60px;
     width: 100%;
     font-family: monospace;
-    position: absolute;
+    transform: translateY(-60px);
 }
 
 .pareja {
@@ -228,6 +243,20 @@ footer {
     animation: heartAnimation 1s linear infinite;
 }
 
+footer > a {
+    display: contents;
+}
+
+.github, .linkedin {
+    position: absolute;
+    right: 17em;
+    height: 30px;
+}
+
+.linkedin {
+    right: 13.7em;
+}
+
 @keyframes loader {
     from {
       transform: rotate(0deg);
@@ -262,5 +291,15 @@ footer {
 
     .pareja {
         right: 10em;
+    }
+
+    .linkedin {
+        right:0.5em;
+        height: 20px;
+    }
+
+    .github {
+        right: 2.1em;
+        height: 20px;
     }
 }
