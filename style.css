@@ -26,9 +26,17 @@
     flex-direction: column;
 }
 
+.align-right {
+    align-items: flex-end;
+}
+
+.align-center {
+    align-items: center;
+}
+
 /* DOGGOS */
 .levi {
-    background-color: black;
+    background-color: rgb(240, 41, 41);
 }
 
 .barney {
@@ -127,6 +135,12 @@ img {
     transform: translateX(390px);
 }
 
+.photo.left {
+    justify-content: flex-start;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+    transform: translateX(-333px);
+}
+
 .active {
     opacity: 1;
 }
@@ -140,6 +154,10 @@ img {
 }
 
 .right.active {
+    transform: translateX(0px);
+}
+
+.left.active {
     transform: translateX(0px);
 }
 
