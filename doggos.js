@@ -6,12 +6,24 @@ setInterval(() => {
   counter.innerHTML = num
 }, 2000)
 
+// Función para ajustar la altura del contenedor .scroller
+function ajustarAlturaScroller() {
+  const scroller = document.querySelector(".scroller");
+  const alturaBarraNavegacion = window.innerHeight - document.documentElement.clientHeight;
+
+  scroller.style.maxHeight = `calc(100vh - ${alturaBarraNavegacion}px)`;
+}
+
+// Llama a la función cuando la página se carga y cuando se cambia el tamaño de la ventana
+window.addEventListener("load", ajustarAlturaScroller);
+window.addEventListener("resize", ajustarAlturaScroller);
+
 document.addEventListener("DOMContentLoaded", function () {
   try {
     if (screen.orientation === 'portrait') {
-      screen.orientation.lock("portrait")
+      window.screen.orientation.lock("portrait")
     }else {
-      screen.orientation.lock("portrait")
+      window.screen.orientation.lock("portrait")
     }
   } catch (error) {
     console.error(error)
@@ -43,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const getElementVisible = () => {
     const scroller = document.querySelector(".scroller");
-    const doggos = document.querySelectorAll(".doggos");
+    const doggos = document.querySelectorAll("section");
   
     scroller.addEventListener("scroll", () => {
       const scrollPosition = scroller.scrollTop + window.innerHeight / 2;
@@ -52,8 +64,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const rect = doggo.getBoundingClientRect();
   
         if (rect.top <= scrollPosition && rect.bottom >= scrollPosition) {
+          console.log(rect.top <= scrollPosition && rect.bottom >= scrollPosition)
           handleScroll()
-        } 
+        } else {
+          console.log(rect.top <= scrollPosition && rect.bottom >= scrollPosition)
+        }
       });
     });
   }
