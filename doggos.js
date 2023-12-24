@@ -18,16 +18,6 @@ window.addEventListener("load", adjustScrollerHeight);
 window.addEventListener("resize", adjustScrollerHeight);
 
 document.addEventListener("DOMContentLoaded", function () {
-  try {
-    if (screen.orientation === 'portrait') {
-      window.screen.orientation.lock("portrait")
-    }else {
-      window.screen.orientation.lock("portrait")
-    }
-  } catch (error) {
-    console.error(error)
-  }
-
   const sections = document.querySelectorAll("section");
   const animatedInfos = document.querySelectorAll(".info");
   const animatedImages = document.querySelectorAll(".photo");
@@ -59,5 +49,18 @@ document.addEventListener("DOMContentLoaded", function () {
   handleScroll();
 });
 
+const openGallery = (doggo) => {
+  const galleries = document.querySelectorAll(".gallery")
 
-
+  galleries.forEach((gallery) => {
+    if (gallery.style.display === "flex") {
+      gallery.style.display = "none";
+    }
+  })
+  
+  galleries[doggo].style.display = "flex";
+  setTimeout(() => {
+    galleries[doggo].scrollIntoView({behavior: "smooth"});
+  }, 200)
+  
+}

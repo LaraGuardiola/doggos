@@ -35,6 +35,10 @@
     color: white;
 }
 
+.gallery {
+    display: none;
+}
+
 .info {
     display: flex;
     flex-direction: column;
