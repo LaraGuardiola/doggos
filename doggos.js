@@ -7,15 +7,15 @@ setInterval(() => {
 }, 2000)
 
 // Función para ajustar la altura del contenedor .scroller
-function ajustarAlturaScroller() {
+const adjustScrollerHeight = () => {
   const scroller = document.querySelector(".scroller");
-  const alturaBarraNavegacion = window.innerHeight - document.documentElement.clientHeight;
+  const navbarHeight = window.innerHeight - document.documentElement.clientHeight;
 
-  scroller.style.maxHeight = `calc(100vh - ${alturaBarraNavegacion}px)`;
+  scroller.style.maxHeight = `calc(100vh - ${navbarHeight}px)`;
 }
 
-window.addEventListener("load", ajustarAlturaScroller);
-window.addEventListener("resize", ajustarAlturaScroller);
+window.addEventListener("load", adjustScrollerHeight);
+window.addEventListener("resize", adjustScrollerHeight);
 
 document.addEventListener("DOMContentLoaded", function () {
   try {
@@ -31,8 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll("section");
   const animatedInfos = document.querySelectorAll(".info");
   const animatedImages = document.querySelectorAll(".photo");
+  const scroller = document.querySelector(".scroller");
 
   const handleScroll = () => {
+    
     sections.forEach((section, index) => {
       const rect = section.getBoundingClientRect();
       const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
