@@ -20,7 +20,8 @@
     scroll-snap-type: mandatory;
     scroll-snap-points-y: repeat(100vh);
     scroll-snap-type: y mandatory;
-    max-height: 100dvh;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     overflow-y: scroll;
 }
 
