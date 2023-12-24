@@ -39,6 +39,20 @@
     display: none;
 }
 
+.doggos.gallery img {
+    height: 33%;
+    width: auto; 
+    object-fit: cover; 
+}
+
+.doggos.gallery.duke img {
+    height: 50%;
+}
+
+.doggos.gallery.levi img {
+    height: 25%;
+}
+
 .info {
     display: flex;
     flex-direction: column;

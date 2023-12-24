@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const scroller = document.querySelector(".scroller");
 
   const handleScroll = () => {
-    
+
     sections.forEach((section, index) => {
       const rect = section.getBoundingClientRect();
       const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
@@ -57,10 +57,9 @@ const openGallery = (doggo) => {
       gallery.style.display = "none";
     }
   })
-  
+
   galleries[doggo].style.display = "flex";
   setTimeout(() => {
-    galleries[doggo].scrollIntoView({behavior: "smooth"});
+    galleries[doggo].scrollIntoView({ behavior: "smooth" });
   }, 200)
-  
 }
