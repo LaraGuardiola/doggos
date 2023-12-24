@@ -85,6 +85,10 @@
     background-color: rgb(2, 248, 150);
 }
 
+.lightblue {
+    background-color: rgb(163, 232, 255);
+}
+
 .loader {
     justify-content: center;
     color: black;
@@ -180,6 +184,24 @@ img {
     transform: translateX(0px);
 }
 
+/* EPILOGUE */
+.epilogue {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: black;
+}
+
+.epilogue > p {
+    margin: 1em;
+    text-align: center;
+}
+
+.paws {
+    height: 80px;
+}
+
+/* LOADER */
 .loader {
     display: flex;
     justify-content: center;
