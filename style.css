@@ -20,7 +20,7 @@
     scroll-snap-type: mandatory;
     scroll-snap-points-y: repeat(100vh);
     scroll-snap-type: y mandatory;
-    max-height: 100vh;
+    max-height: 100%;
     overflow-y: scroll;
 }
 
@@ -37,20 +37,21 @@
 
 .gallery {
     display: none;
+    justify-content: center;
 }
 
 .doggos.gallery img {
-    height: 33%;
+    height: 30%;
     width: auto; 
     object-fit: cover; 
 }
 
 .doggos.gallery.duke img {
-    height: 50%;
+    height: 45%;
 }
 
 .doggos.gallery.levi img {
-    height: 25%;
+    height: 22%;
 }
 
 .info {
@@ -207,6 +208,7 @@ img {
 }
 
 .epilogue > p {
+    margin-top: 3em;
     margin: 1em;
     text-align: center;
 }
