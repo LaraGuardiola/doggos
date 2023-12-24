@@ -14,7 +14,6 @@ function ajustarAlturaScroller() {
   scroller.style.maxHeight = `calc(100vh - ${alturaBarraNavegacion}px)`;
 }
 
-// Llama a la función cuando la página se carga y cuando se cambia el tamaño de la ventana
 window.addEventListener("load", ajustarAlturaScroller);
 window.addEventListener("resize", ajustarAlturaScroller);
 
@@ -34,8 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const animatedImages = document.querySelectorAll(".photo");
 
   const handleScroll = () => {
-    console.log("scrolleamos wey")
-    console.log(window.innerHeight)
     sections.forEach((section, index) => {
       const rect = section.getBoundingClientRect();
       const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
@@ -53,31 +50,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
-  const getElementVisible = () => {
-    const scroller = document.querySelector(".scroller");
-    const doggos = document.querySelectorAll("section");
-  
-    scroller.addEventListener("scroll", () => {
-      const scrollPosition = scroller.scrollTop + window.innerHeight / 2;
-  
-      doggos.forEach(doggo => {
-        const rect = doggo.getBoundingClientRect();
-  
-        if (rect.top <= scrollPosition && rect.bottom >= scrollPosition) {
-          console.log(rect.top <= scrollPosition && rect.bottom >= scrollPosition)
-          handleScroll()
-        } else {
-          console.log(rect.top <= scrollPosition && rect.bottom >= scrollPosition)
-        }
-      });
-    });
-  }
-
+  scroller.addEventListener("scroll", handleScroll)
   window.addEventListener("scroll", handleScroll);
   window.addEventListener("resize", handleScroll);
   //Llama a la función handleScroll al cargar la página para activar la animación inicial
   handleScroll();
-  getElementVisible();
 });
 
 
